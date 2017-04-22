@@ -15,6 +15,9 @@ class PreTest extends Component {
 
 	handleSubmit(event) {
 		event.preventDefault();
+		/*установить state.status = 'testing' у компонента Test*/
+		this.props.changeState('testing');
+		this.props.setQuantity(parseInt(this.state.value));
 	}
 	render() {
 		return (
