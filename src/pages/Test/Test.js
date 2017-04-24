@@ -46,7 +46,6 @@ class Test extends Component {
 		})
 	}
 	render() {
-
 		return (
 			<div>
 				<h3>Тест</h3>

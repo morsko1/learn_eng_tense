@@ -5,7 +5,7 @@ class Learning extends Component {
 	render() {
 		return (
 			<div>
-				<h2>Обучение</h2>
+				<h3>Обучение</h3>
 
 				<ul className="nav nav-tabs">
 					<li className="active"><a data-toggle="tab" href="#past">Прошедшее</a></li>

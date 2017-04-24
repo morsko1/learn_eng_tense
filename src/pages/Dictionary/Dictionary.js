@@ -1,21 +1,66 @@
 import React, { Component } from 'react';
-import {
-	Link
-} from 'react-router-dom';
+
+import Pronouns from './parts/Pronouns.js'
+import Verbs from './parts/Verbs.js'
+import Nouns from './parts/Nouns.js'
+import Prepositions from './parts/Prepositions.js'
 
 class Dictionary extends Component {
+	constructor (props) {
+		super (props);
+		this.state = {part: ''}
+
+		this.handleClick = this.handleClick.bind(this);
+		this.resetPart = this.resetPart.bind(this);
+	}
+
+	resetPart () {
+		this.setState({part: ''});
+	}
+
+	handleClick (event) {
+		this.setState({part: event.target.id});
+	}
+
 	render() {
 		return (
 			<div>
-				<h3>Dictionary</h3>
-					<div className="row">
-						<div className="btn-group btn-group-vertical col-xs-12">
-							<Link to="/dictionary/pronouns" className="btn btn-default">Местоимения</Link>
-							<Link to="/dictionary/verbs" className="btn btn-default">Глаголы</Link>
-							<Link to="/dictionary/nouns"  className="btn btn-default">Существительные</Link>
-							<Link to="/dictionary/prepositions"  className="btn btn-default">Предлоги</Link>
+				{(this.state.part === '') ?
+					<div>
+						<h3>Словарь</h3>
+						<div className="row" onClick={this.handleClick}>
+							<div className="btn-group btn-group-vertical col-xs-12">
+								<button
+									id="pronouns"
+									className="btn btn-default">Местоимения</button>
+								<button
+									id="verbs"
+									className="btn btn-default">Глаголы</button>
+								<button
+									id="nouns"
+									className="btn btn-default">Существительные</button>
+								<button
+									id="prepositions"
+									className="btn btn-default">Предлоги</button>
+							</div>
 						</div>
 					</div>
+					:
+					(() => {
+						switch (this.state.part) {
+							case 'pronouns':
+								return <Pronouns resetPart={this.resetPart}/>
+							case 'verbs':
+								return <Verbs resetPart={this.resetPart}/>
+							case 'nouns':
+								return <Nouns resetPart={this.resetPart}/>
+							case 'prepositions':
+								return <Prepositions resetPart={this.resetPart}/>
+							default :
+								return null
+						}
+					})()
+			}
 			</div>
 		);
 	}

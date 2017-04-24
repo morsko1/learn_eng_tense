@@ -9,6 +9,7 @@ h1, h2, h3, h4{
 .root{
 	max-width: 320px;
 	background-color: #eee;
+	/*min-height: 50em;*/
 	/*text-align: center;*/
 }
 
