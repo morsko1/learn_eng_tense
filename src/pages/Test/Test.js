@@ -8,13 +8,18 @@ class Test extends Component {
 		super (props);
 		this.state = {
 			status: 'pre',
-			quantity: 0
+			quantity: 0,
+			right: 0,
+			wrong: 0
 		};
-		this.changeState = this.changeState.bind(this);
+		this.changeStatus = this.changeStatus.bind(this);
 		this.setQuantity = this.setQuantity.bind(this);
+		this.right = this.right.bind(this);
+		this.wrong = this.wrong.bind(this);
+		this.resetResult = this.resetResult.bind(this);
 	}
 
-	changeState (newValue) {
+	changeStatus (newValue) {
 		this.setState({
 			status: newValue
 		});
@@ -24,7 +29,22 @@ class Test extends Component {
 			quantity: num
 		});
 	}
-
+	right () {
+		this.setState((prevState) => ({
+			right: prevState.right + 1
+		}));
+	}
+	wrong () {
+		this.setState((prevState) => ({
+			wrong: prevState.wrong + 1
+		}));
+	}
+	resetResult () {
+		this.setState({
+			right: 0,
+			wrong: 0
+		})
+	}
 	render() {
 
 		return (
@@ -34,11 +54,21 @@ class Test extends Component {
 					{(() => {
 						switch (this.state.status) {
 							case 'pre':
-								return <PreTest changeState={this.changeState} setQuantity={this.setQuantity}/>
+								return <PreTest
+												changeStatus={this.changeStatus}
+												setQuantity={this.setQuantity}/>
 							case 'testing':
-								return <BodyTest changeState={this.changeState} quantity={this.state.quantity}/>
+								return <BodyTest
+												changeStatus={this.changeStatus}
+												right={this.right}
+												wrong={this.wrong}
+												quantity={this.state.quantity}/>
 							case 'post':
-								return <PostTest changeState={this.changeState}/>
+								return <PostTest
+												changeStatus={this.changeStatus}
+												right={this.state.right}
+												wrong={this.state.wrong}
+												resetResult={this.resetResult}/>
 							default :
 								return null
 						}

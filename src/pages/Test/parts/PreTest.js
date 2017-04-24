@@ -16,14 +16,15 @@ class PreTest extends Component {
 	handleSubmit(event) {
 		event.preventDefault();
 		/*установить state.status = 'testing' у компонента Test*/
-		this.props.changeState('testing');
-		this.props.setQuantity(parseInt(this.state.value));
+		this.props.changeStatus('testing');
+		this.props.setQuantity(parseInt(this.state.value, 10));
 	}
 	render() {
 		return (
 			<div>
 				<form onSubmit={this.handleSubmit}>
-						Количество вопросов:<select
+						Количество вопросов:
+						<select
 							name=""
 							id="quantity"
 							value={this.state.value}

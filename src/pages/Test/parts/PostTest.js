@@ -6,12 +6,15 @@ class PostTest extends Component {
 		this.handleClick = this.handleClick.bind(this);
 	}
 	handleClick () {
-		this.props.changeState('pre');
+		this.props.resetResult();
+		this.props.changeStatus('pre');
 	}
 	render() {
 		return (
 			<div>
 				<div>Вопросы закончились.</div>
+				Правильные: {this.props.right} <br/>
+				Неправильные: {this.props.wrong} <br/>
 				<button className="btn btn-default" onClick={this.handleClick}>Начать заново</button>
 			</div>
 		);

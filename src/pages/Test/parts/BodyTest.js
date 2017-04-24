@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import questions from './questions'
 
 class BodyTest extends Component {
 	constructor (props) {
@@ -6,21 +7,7 @@ class BodyTest extends Component {
 		this.state = {
 			value: '',
 			currentQ: 0,
-			isFinished: false,
-			questions: [
-				{
-					q: 'я люблю',
-					a: 'i love'
-				},
-				{
-					q: 'ты будешь любить?',
-					a: 'will you love?'
-				},
-				{
-					q: 'ты любил?',
-					a: 'did you love?'
-				}
-			]
+			questions: questions
 		};
 
 		this.handleChange = this.handleChange.bind(this);
@@ -35,7 +22,6 @@ class BodyTest extends Component {
 
 	handleSubmit (event) {
 		event.preventDefault();
-		console.log('working');
 		console.log(this.state.value);
 		const formTest = document.getElementById('form-test');
 		const currentQ = this.state.currentQ;
@@ -54,19 +40,27 @@ class BodyTest extends Component {
 		const formTest = document.getElementById('form-test');
 		const quantity = this.props.quantity;
 		this.setState({value: ''});
+
+		if (formTest.classList.contains('has-success')) {
+			this.props.right();
+		} else {
+			this.props.wrong();
+		}
+
 		formTest.classList.remove('has-error');
 		formTest.classList.remove('has-success');
-		// if (this.state.currentQ === this.state.questions.length - 1) {
+
+		// if no more questions
 		if (this.state.currentQ === quantity - 1) {
-			this.setState({isFinished: true});
-			this.props.changeState('post');
+			this.props.changeStatus('post');
 			console.log('вопросы закончились');
 			return;
 		}
-		this.setState((prevState, props) => ({
+		this.setState((prevState) => ({
 			currentQ: prevState.currentQ + 1
 		}));
 	}
+
 	render() {
 		const currentQ = this.state.currentQ;
 		return (
