@@ -12,7 +12,7 @@ class Home extends Component {
 						<div className="btn-group btn-group-vertical col-xs-12">
 							<Link to="/learning" className="btn btn-default">Обучение</Link>
 							<Link to="/dictionary" className="btn btn-default">Словарь</Link>
-							<Link to="/tests" className="btn btn-default">Тест</Link>
+							<Link to="/test" className="btn btn-default">Тест</Link>
 						</div>
 					</div>
 			</div>

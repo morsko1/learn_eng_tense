@@ -24,7 +24,7 @@ class App extends Component {
 								<Route path="/dictionary/verbs" component={Verbs}/>
 								<Route path="/dictionary/nouns" component={Nouns}/>
 								<Route path="/dictionary/prepositions" component={Prepositions}/>*/}
-						<Route path="/tests" component={Test}/>
+						<Route path="/test" component={Test}/>
 					</div>
 			</Router>
 		);
