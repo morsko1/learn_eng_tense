@@ -8,13 +8,11 @@ class Home extends Component {
 		return (
 			<div>
 				<h3>Выберите режим</h3>
-					<div className="row">
-						<div className="btn-group btn-group-vertical col-xs-12">
-							<Link to="/learning" className="btn btn-default">Обучение</Link>
-							<Link to="/dictionary" className="btn btn-default">Словарь</Link>
-							<Link to="/test" className="btn btn-default">Тест</Link>
+						<div className="">
+							<Link to="/learning" className="btn-block">Обучение</Link>
+							<Link to="/dictionary" className="btn-block">Словарь</Link>
+							<Link to="/test" className="btn-block">Тест</Link>
 						</div>
-					</div>
 			</div>
 		);
 	}

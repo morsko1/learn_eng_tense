@@ -1,20 +1,35 @@
 import React, { Component } from 'react';
 
 class Learning extends Component {
-
+	constructor (props) {
+		super (props);
+		this.handleClick = this.handleClick.bind(this);
+	}
+	handleClick (event) {
+		const tabcontent = document.getElementsByClassName('tabcontent');
+		for (let i = 0; i < tabcontent.length; i++) {
+			tabcontent[i].style.display = 'none';
+		}
+		const tablinks = document.getElementsByClassName('tablink');
+			for (let i = 0; i < tablinks.length; i++) {
+				tablinks[i].className = tablinks[i].className.replace(' active', '');
+			}
+		document.getElementById(event.target.dataset.tense).style.display = 'block';
+		event.target.classList.add('active');
+	}
 	render() {
 		return (
 			<div>
 				<h3>Обучение</h3>
 
-				<ul className="nav nav-tabs">
-					<li className="active"><a data-toggle="tab" href="#past">Прошедшее</a></li>
-					<li><a data-toggle="tab" href="#present">Настоящее</a></li>
-					<li><a data-toggle="tab" href="#future">Будущее</a></li>
-				</ul>
+				<div className="tabs">
+					<div data-tense="past" className="tablink btn-block" onClick={this.handleClick}>Прошедшее</div>
+					<div data-tense="present" className="tablink btn-block active" onClick={this.handleClick}>Настоящее</div>
+					<div data-tense="future" className="tablink btn-block" onClick={this.handleClick}>Будущее</div>
+				</div>
 
-					<div className="tab-content">
-						<div id="past" className="tab-pane fade in active learning-content" >
+					<div className="">
+						<div id="past" className=" tabcontent learning-content" >
 							Утверждение:<br/>
 							I loved.<br/><br/>
 
@@ -24,7 +39,7 @@ class Learning extends Component {
 							Вопрос:<br/>
 							Did I love?
 						</div>
-						<div id="present" className="tab-pane fade learning-content" >
+						<div id="present" className="tabcontent learning-content" >
 							Утверждение:<br/>
 							I love.<br/><br/>
 
@@ -34,7 +49,7 @@ class Learning extends Component {
 							Вопрос:<br/>
 							Do I love?
 						</div>
-						<div id="future" className="tab-pane fade learning-content" >
+						<div id="future" className="tabcontent learning-content" >
 							Утверждение:<br/>
 							I will love.<br/><br/>
 

@@ -15,7 +15,7 @@ class PostTest extends Component {
 				<div>Вопросы закончились.</div>
 				Правильные: {this.props.right} <br/>
 				Неправильные: {this.props.wrong} <br/>
-				<button className="btn btn-default" onClick={this.handleClick}>Начать заново</button>
+				<div className="btn-block" onClick={this.handleClick}>Начать заново</div>
 			</div>
 		);
 	}

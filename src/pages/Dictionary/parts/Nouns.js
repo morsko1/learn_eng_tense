@@ -4,10 +4,10 @@ class Nouns extends Component {
 	render() {
 		return (
 			<div>
-				<button
-					className="btn btn-default"
-					onClick={this.props.resetPart}>Словарь</button>
-				<h2>Nouns</h2>
+				<div
+					className="btn-block"
+					onClick={this.props.resetPart}>Словарь</div>
+				<h3>Nouns</h3>
 			</div>
 		);
 	}

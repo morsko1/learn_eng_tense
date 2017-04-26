@@ -1,3 +1,11 @@
+html{
+	box-sizing: border-box;
+	min-height: 100vh;
+	background-color: #eee;
+}
+*, *:before, *:after{
+	box-sizing: inherit;
+}
 body {
 	margin: 0;
 	padding: 0;
@@ -7,10 +15,8 @@ h1, h2, h3, h4{
 	text-align: center;
 }
 .root{
-	max-width: 320px;
-	background-color: #eee;
-	/*min-height: 50em;*/
-	/*text-align: center;*/
+	width: 800px;
+	margin: 0 auto;
 }
 
 .clearfix:after {
@@ -20,4 +26,88 @@ h1, h2, h3, h4{
 }
 .learning-content{
 	text-align: center;
+}
+.btn-block{
+	display: block;
+	background-color: #fff;
+	cursor: pointer;
+	text-decoration: none;
+	padding: 0.5em;
+	text-align: center;
+	border: 1px solid #888;
+	border-radius: 5px;
+}
+.btn{
+	display: inline-block;
+	background-color: #fff;
+	cursor: pointer;
+	text-decoration: none;
+	padding: 0.5em;
+	text-align: center;
+	border: 1px solid #888;
+	border-radius: 5px;
+}
+.tabs{
+	text-align: center;
+	margin-bottom: 1em;
+}
+.tablink{
+	float: left;
+	width: 33.33333333333333%;
+}
+.tabs .active {
+	background-color: #aaa;
+}
+.tabcontent{
+	display: none;
+}
+.tabcontent {
+	animation: fadeEffect 0.5s;
+}
+@keyframes fadeEffect {
+	from {opacity: 0;}
+	to {opacity: 1;}
+}
+#present{
+	display: block;
+}
+.dictionary-nav .btn-block{
+	float: left;
+	width: 50%;
+}
+
+.pre-test{
+	text-align: center;
+}
+.pre-test input[type="submit"],
+.form-test input[type="submit"]{
+	display: block;
+	margin-top: 1em;
+	width: 100%;
+	font-size: 1em;
+}
+.form-test input[type="text"]{
+	display: block;
+	line-height: 1.5em;
+	width: 100%;
+	padding: 0.5em;
+	font-size: 1em;
+}
+.has-success input[type="text"]{
+	background-color: #56d858;
+}
+.has-error input[type="text"]{
+	background-color: #ff795e;
+}
+@media screen and (max-width: 768px) {
+
+.root{
+	width: auto;
+	margin: none;
+}
+.dictionary-nav .btn-block{
+	clear: both;
+	width: 100%;
+}
+
 }

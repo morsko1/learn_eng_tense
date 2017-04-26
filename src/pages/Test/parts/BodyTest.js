@@ -65,38 +65,26 @@ class BodyTest extends Component {
 		const currentQ = this.state.currentQ;
 		return (
 			<div>
-				<h4>Вопрос 1:</h4>
+				<h4>Вопрос {currentQ+1}:</h4>
 				<h4>{this.state.questions[currentQ].q}</h4>
 				<form
 					onSubmit={this.handleSubmit}
 					id="form-test"
-					className="form-group">
-					<div className="row">
-						<div className="col-xs-1"></div>
-						<div className="col-xs-8">
-							<input 
-								type="text"
-								id="check-input"
-								className="form-control"
-								value={this.state.value}
-								placeholder="Ваш ответ"
-								autoComplete="off"
-								onChange={this.handleChange} />
-						</div>
-						<div className="col-xs-2">
-							<input
-								type="submit"
-								value="ok"
-								className="btn btn-default"/>
-						</div>
-						<div className="col-xs-1"></div>
-					</div> {/*end .row*/}
+					className="form-test">
+						<input 
+							type="text"
+							id="check-input"
+							className=""
+							value={this.state.value}
+							placeholder="Ваш ответ"
+							autoComplete="off"
+							onChange={this.handleChange} />
+						<input
+							type="submit"
+							value="OK"
+							className="btn-block"/>
 				</form>
-				<div className="row">
-					<div className="btn-group btn-group-vertical col-xs-12">
-					<button className="btn btn-default" onClick={this.nextQ}>Следующий вопрос</button>
-					</div>
-				</div>
+					<div className="btn-block" onClick={this.nextQ}>Следующий вопрос</div>
 			</div>
 		);
 	}

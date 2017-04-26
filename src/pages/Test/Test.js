@@ -49,7 +49,6 @@ class Test extends Component {
 		return (
 			<div>
 				<h3>Тест</h3>
-				<br/>
 					{(() => {
 						switch (this.state.status) {
 							case 'pre':

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+// import {Link} from 'react-router-dom';
 import Pronouns from './parts/Pronouns.js'
 import Verbs from './parts/Verbs.js'
 import Nouns from './parts/Nouns.js'
@@ -28,21 +28,19 @@ class Dictionary extends Component {
 				{(this.state.part === '') ?
 					<div>
 						<h3>Словарь</h3>
-						<div className="row" onClick={this.handleClick}>
-							<div className="btn-group btn-group-vertical col-xs-12">
-								<button
-									id="pronouns"
-									className="btn btn-default">Местоимения</button>
-								<button
-									id="verbs"
-									className="btn btn-default">Глаголы</button>
-								<button
-									id="nouns"
-									className="btn btn-default">Существительные</button>
-								<button
-									id="prepositions"
-									className="btn btn-default">Предлоги</button>
-							</div>
+						<div className="dictionary-nav" onClick={this.handleClick}>
+							<div
+								id="pronouns"
+								className="btn-block">Местоимения</div>
+							<div
+								id="verbs"
+								className="btn-block">Глаголы</div>
+							<div
+								id="nouns"
+								className="btn-block">Существительные</div>
+							<div
+								id="prepositions"
+								className="btn-block">Предлоги</div>
 						</div>
 					</div>
 					:

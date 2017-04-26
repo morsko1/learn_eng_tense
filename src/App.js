@@ -9,14 +9,17 @@ import Learning from './pages/Learning/Learning.js'
 import Test from './pages/Test/Test.js'
 import Dictionary from './pages/Dictionary/Dictionary.js'
 
-document.getElementById('root').style.minHeight = document.body.scrollHeight + 'px';
+// import Pronouns from './pages/Dictionary/parts/Pronouns.js'
+// import Verbs from './pages/Dictionary/parts/Verbs.js'
+// import Nouns from './pages/Dictionary/parts/Nouns.js'
+// import Prepositions from './pages/Dictionary/parts/Prepositions.js'
 
 class App extends Component {
 	render() {
 		return (
 			<Router>
 					<div>
-						<Link to="/" className="btn btn-default">На главную</Link>
+						<Link to="/" className="btn-block">На главную</Link>
 						<Route exact path="/" component={Home}/>
 						<Route path="/learning" component={Learning}/>
 						<Route exact path="/dictionary" component={Dictionary}/>

@@ -22,8 +22,8 @@ class PreTest extends Component {
 	render() {
 		return (
 			<div>
-				<form onSubmit={this.handleSubmit}>
-						Количество вопросов:
+				<form className="pre-test" onSubmit={this.handleSubmit} >
+						<span>Количество вопросов: </span>
 						<select
 							name=""
 							id="quantity"
@@ -32,7 +32,9 @@ class PreTest extends Component {
 							<option value="2">2</option>
 							<option value="3">3</option>
 						</select>
-						<input type="submit" value="Старт"/>
+						<div>
+							<input className="start btn-block" type="submit" value="Старт"/>
+						</div>
 				</form>
 			</div>
 		);
