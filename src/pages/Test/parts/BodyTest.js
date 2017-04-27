@@ -25,7 +25,7 @@ class BodyTest extends Component {
 		console.log(this.state.value);
 		const formTest = document.getElementById('form-test');
 		const currentQ = this.state.currentQ;
-		if ((this.state.value).toLowerCase() === this.state.questions[currentQ].a) {
+		if ((this.state.value).toLowerCase() === this.state.questions[currentQ].a.toLowerCase()) {
 			console.log('right!');
 			formTest.classList.add('has-success');
 			formTest.classList.remove('has-error');
