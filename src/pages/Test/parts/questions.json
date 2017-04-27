@@ -1,14 +1,77 @@
 [
 	{
-		"q": "я люблю",
-		"a": "i love"
+		"tense": "present",
+		"type": "statement",
+		"q": "Я люблю.",
+		"a": "I love."
 	},
 	{
-		"q": "ты будешь любить?",
-		"a": "will you love?"
+		"tense": "present",
+		"type": "statement",
+		"q": "Она любит.",
+		"a": "She loves."
 	},
 	{
+		"tense": "future",
+		"type": "statement",
+		"q": "Они полюбят.",
+		"a": "They will love."
+	},
+	{
+		"tense": "past",
+		"type": "statement",
+		"q": "Ты любил.",
+		"a": "You loved."
+	},
+
+	{
+		"tense": "future",
+		"type": "question",
+		"q": "Ты будешь любить?",
+		"a": "Will you love?"
+	},
+	{
+		"tense": "present",
+		"type": "question",
+		"q": "Ты любишь?",
+		"a": "Do you love?"
+	},
+	{
+		"tense": "present",
+		"type": "question",
+		"q": "Она любит?",
+		"a": "Does she love?"
+	},
+	{
+		"tense": "past",
+		"type": "question",
 		"q": "ты любил?",
-		"a": "did you love?"
+		"a": "Вid you love?"
+	},
+
+	{
+		"tense": "present",
+		"type": "negation",
+		"q": "Я не люблю",
+		"a": "I do not love."
+	},
+	{
+		"tense": "present",
+		"type": "negation",
+		"q": "Он не любит.",
+		"a": "He does not love."
+	},
+	{
+		"tense": "future",
+		"type": "negation",
+		"q": "Ты полюбишь?",
+		"a": "Will you love?"
+	},
+	{
+		"tense": "past",
+		"type": "negation",
+		"q": "Они не любили",
+		"a": "They did not love."
 	}
+
 ]
