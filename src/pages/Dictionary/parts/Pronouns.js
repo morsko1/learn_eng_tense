@@ -29,7 +29,7 @@ class Pronouns extends Component {
 		tooltip.style.display = 'block';
 		const coords = document.getElementsByTagName('table')[0].getBoundingClientRect();
 		const fontSize = window.getComputedStyle(document.body, null).getPropertyValue('font-size');
-		tooltip.style.top = (coords.top - parseInt(fontSize, 10)*2) + 'px';
+		tooltip.style.top = (coords.top + window.pageYOffset - parseInt(fontSize, 10)*2) + 'px';
 		tooltip.style.left = (coords.left - parseInt(fontSize, 10)*2) + 'px';
 	}
 	handleOut (event) {

@@ -124,8 +124,9 @@ h1, h2, h3, h4{
 	margin: 0 auto;
 	background-color: yellow;
 	position: absolute;
-	/*top: -2em;*/
 	text-align: center;
+	padding: 0.3em;
+	border-radius: 5px;
 }
 
 @media screen and (max-width: 768px) {
