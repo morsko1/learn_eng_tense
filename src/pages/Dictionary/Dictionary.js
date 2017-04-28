@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import {Link} from 'react-router-dom';
 import Pronouns from './parts/Pronouns.js'
 import Verbs from './parts/Verbs.js'
 import Nouns from './parts/Nouns.js'

@@ -10,6 +10,7 @@ body {
 	margin: 0;
 	padding: 0;
 	font-family: sans-serif;
+	font-size: 100%;
 }
 h1, h2, h3, h4{
 	text-align: center;
@@ -99,6 +100,34 @@ h1, h2, h3, h4{
 .has-error input[type="text"]{
 	background-color: #ff795e;
 }
+.table-words{
+	border-collapse: collapse;
+	margin: 0 auto;
+}
+.table-words td, th{
+	border: 1px solid #777;
+	padding: 0.5em;
+}
+.table-words th{
+	background-color: #56d858;
+	cursor: pointer;
+}
+.table-words th:hover{
+	background-color: #56d858;
+	cursor: pointer;
+}
+.table-words tbody tr:nth-child(odd){
+	background-color: #fff;
+}
+.tooltip{
+	display: none;
+	margin: 0 auto;
+	background-color: yellow;
+	position: absolute;
+	/*top: -2em;*/
+	text-align: center;
+}
+
 @media screen and (max-width: 768px) {
 
 .root{
