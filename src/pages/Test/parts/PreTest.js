@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
+import questions from './questions';
 
 class PreTest extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {value: '2'};
+		this.state = {
+			value: questions.length,
+			length: questions.length
+		};
 
 		this.handleChange = this.handleChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
@@ -29,8 +33,8 @@ class PreTest extends Component {
 							id="quantity"
 							value={this.state.value}
 							onChange={this.handleChange}>
-							<option value="2">2</option>
-							<option value="3">3</option>
+							<option value={this.state.length}>все</option>
+							<option value={parseInt(this.state.length/2, 10)}>половина</option>
 						</select>
 						<div>
 							<input className="start btn-block" type="submit" value="Старт"/>

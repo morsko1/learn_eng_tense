@@ -51,7 +51,7 @@ class BodyTest extends Component {
 		formTest.classList.remove('has-success');
 
 		// if no more questions
-		if (this.state.currentQ === quantity - 1) {
+		if (this.state.currentQ === quantity -1) {
 			this.props.changeStatus('post');
 			console.log('вопросы закончились');
 			return;
@@ -65,7 +65,7 @@ class BodyTest extends Component {
 		const currentQ = this.state.currentQ;
 		return (
 			<div>
-				<h4>Вопрос {currentQ+1}:</h4>
+				<h4>Вопрос {currentQ + 1}:</h4>
 				<h4>{this.state.questions[currentQ].q}</h4>
 				<form
 					onSubmit={this.handleSubmit}

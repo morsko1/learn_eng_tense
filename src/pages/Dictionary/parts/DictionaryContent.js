@@ -38,7 +38,7 @@ class Pronouns extends Component {
 	}
 
 	render() {
-		const list = dict.pronouns.map((word) => 
+		const list = dict[this.props.part].content.map((word) => 
 			<tr key={word.en.toString()}>
 				<td><span>{word.en}</span></td>
 				<td><span>{word.ru}</span></td>
@@ -49,14 +49,14 @@ class Pronouns extends Component {
 				<div
 					className="btn-block"
 					onClick={this.props.resetPart}>Словарь</div>
-				<h3>Местоимения</h3>
+				<h3>{dict[this.props.part].title}</h3>
 				<div className="tooltip">нажмите, чтобы скрыть/показать</div>
 				<table className="table-words">
 					<thead>
 						<tr
-						onClick={this.handleClick}
-						onMouseOver={this.handleHover}
-						onMouseOut={this.handleOut}>
+							onClick={this.handleClick}
+							onMouseOver={this.handleHover}
+							onMouseOut={this.handleOut}>
 							<th >eng {String.fromCharCode( '&amp' )}</th>
 							<th >rus {String.fromCharCode( '&#128065' )}</th>
 						</tr>

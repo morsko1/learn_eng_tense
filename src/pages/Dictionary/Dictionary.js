@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-import Pronouns from './parts/Pronouns.js'
-import Verbs from './parts/Verbs.js'
-import Nouns from './parts/Nouns.js'
-import Prepositions from './parts/Prepositions.js'
+import DictionaryContent from './parts/DictionaryContent.js';
 
 class Dictionary extends Component {
 	constructor (props) {
@@ -24,7 +21,7 @@ class Dictionary extends Component {
 	render() {
 		return (
 			<div>
-				{(this.state.part === '') ?
+				{this.state.part === '' ?
 					<div>
 						<h3>Словарь</h3>
 						<div className="dictionary-nav" onClick={this.handleClick}>
@@ -43,21 +40,8 @@ class Dictionary extends Component {
 						</div>
 					</div>
 					:
-					(() => {
-						switch (this.state.part) {
-							case 'pronouns':
-								return <Pronouns resetPart={this.resetPart}/>
-							case 'verbs':
-								return <Verbs resetPart={this.resetPart}/>
-							case 'nouns':
-								return <Nouns resetPart={this.resetPart}/>
-							case 'prepositions':
-								return <Prepositions resetPart={this.resetPart}/>
-							default :
-								return null
-						}
-					})()
-			}
+					<DictionaryContent part={this.state.part} resetPart={this.resetPart}/>
+				}
 			</div>
 		);
 	}
