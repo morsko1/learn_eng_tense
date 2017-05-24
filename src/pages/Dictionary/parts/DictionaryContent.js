@@ -43,6 +43,8 @@ class DictionaryContent extends Component {
 
 	render() {
 		const part = this.props.match.params.part;
+		// если нет такого значения part то перенаправить на страницу NotFound
+		// const isCorrectPart = part in dict;
 		const list = dict[part].content.map((word) => 
 			<tr key={word.en.toString()}>
 				<td><span>{word.en}</span></td>
