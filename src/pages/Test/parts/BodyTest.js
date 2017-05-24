@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import questions from './questions'
+import questions from './questions';
 
 class BodyTest extends Component {
 	constructor (props) {
@@ -14,6 +14,7 @@ class BodyTest extends Component {
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.nextQ = this.nextQ.bind(this);
 	}
+
 	handleChange (event) {
 		this.setState({
 			value: event.target.value

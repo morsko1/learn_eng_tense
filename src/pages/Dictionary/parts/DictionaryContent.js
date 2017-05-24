@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import dict from './dictionary.json';
+import {
+	Link
+} from 'react-router-dom';
 
-class Pronouns extends Component {
+class DictionaryContent extends Component {
 	constructor (props) {
 		super (props);
 		this.handleClick = this.handleClick.bind(this);
@@ -32,13 +35,15 @@ class Pronouns extends Component {
 		tooltip.style.top = (coords.top + window.pageYOffset - parseInt(fontSize, 10)*2) + 'px';
 		tooltip.style.left = (coords.left - parseInt(fontSize, 10)*2) + 'px';
 	}
+
 	handleOut (event) {
 		const tooltip = document.getElementsByClassName('tooltip')[0];
 		tooltip.style.display = '';
 	}
 
 	render() {
-		const list = dict[this.props.part].content.map((word) => 
+		const part = this.props.match.params.part;
+		const list = dict[part].content.map((word) => 
 			<tr key={word.en.toString()}>
 				<td><span>{word.en}</span></td>
 				<td><span>{word.ru}</span></td>
@@ -46,10 +51,8 @@ class Pronouns extends Component {
 		);
 		return (
 			<div>
-				<div
-					className="btn-block"
-					onClick={this.props.resetPart}>Словарь</div>
-				<h3>{dict[this.props.part].title}</h3>
+				<Link to="/dictionary" className="btn-block">Словарь</Link>
+				<h3>{dict[part].title}</h3>
 				<div className="tooltip">нажмите, чтобы скрыть/показать</div>
 				<table className="table-words">
 					<thead>
@@ -57,8 +60,8 @@ class Pronouns extends Component {
 							onClick={this.handleClick}
 							onMouseOver={this.handleHover}
 							onMouseOut={this.handleOut}>
-							<th >eng {String.fromCharCode( '&amp' )}</th>
-							<th >rus {String.fromCharCode( '&#128065' )}</th>
+							<th >eng</th>
+							<th >rus</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -70,4 +73,4 @@ class Pronouns extends Component {
 	}
 }
 
-export default Pronouns;
+export default DictionaryContent;
