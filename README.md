@@ -1,3 +1,7 @@
-learn_eng_tense
+### ReactJS app for lerning English Simple tense.
 
-[Run example](https://morsko1.github.io/learn_eng_tense/build)
+To run the app:
+```
+1. clone the repo
+2. npm start
+```
